@@ -3,8 +3,8 @@
   "name": "v0.2.45",
   "body": null,
   "prerelease": true,
-  "draft": true,
+  "draft": false,
   "sourceRepository": "axisj/axboot-ai",
   "sourceSha": "30f789502be5364b1c18ed6d5997acf4203256e7",
-  "generatedAt": "2026-06-14T22:37:09.469Z"
+  "generatedAt": "2026-06-14T22:45:02.969Z"
 }
