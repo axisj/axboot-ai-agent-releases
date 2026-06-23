@@ -111,7 +111,20 @@ chmod +x ./AXBOOT-AI-Agent
 - 업데이트 전 현재 작업 상태를 저장
 - 중요 프로젝트는 업데이트 전 백업 권장
 
-## 8. 문제 해결
+## 8. 릴리스 운영
+
+정식 배포 전 버전은 AXBOOT AI 본 저장소의 `Release Agent` 워크플로우에서 prerelease로 발행합니다.
+
+검증이 끝난 prerelease를 최신 안정 버전으로 전환하려면 이 저장소의 GitHub Actions에서 `Promote Latest Release`를 수동 실행합니다.
+
+1. GitHub에서 `Actions` > `Promote Latest Release` > `Run workflow`를 선택합니다.
+2. `tag`에 승격할 태그를 입력합니다. 예: `v0.2.57`
+3. `confirm_tag`에 같은 태그를 한 번 더 입력합니다.
+4. 워크플로우가 해당 릴리스의 필수 macOS/Windows asset을 확인한 뒤 `latest`로 승격합니다.
+
+이 액션은 비어 있거나 draft 상태인 릴리스는 latest로 승격하지 않습니다.
+
+## 9. 문제 해결
 
 ### 실행이 차단되는 경우
 
@@ -130,13 +143,13 @@ chmod +x ./AXBOOT-AI-Agent
 - 손상된 프로젝트 폴더 여부 확인
 - 최소 샘플 프로젝트로 재현 테스트
 
-## 9. 보안 가이드
+## 10. 보안 가이드
 
 - 인증 토큰/비밀키를 저장소에 커밋하지 않습니다.
 - 공유 PC에서는 작업 후 로그아웃합니다.
 - 배포 파일은 공식 릴리스 경로에서만 다운로드합니다.
 
-## 10. 문의 및 지원
+## 11. 문의 및 지원
 
 문제 재현이 가능한 정보와 함께 문의해 주세요.
 
