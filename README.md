@@ -120,6 +120,7 @@ GitHub Actions의 `Promote latest prerelease` 워크플로를 수동 실행하�
 
 - draft 릴리즈는 제외합니다.
 - `vX.Y.Z` 형식의 공개 프리릴리즈만 대상으로 합니다.
+- 현재 정식 latest 릴리즈가 선택된 프리릴리즈보다 높거나 같으면 아무 변경 없이 종료합니다.
 - 선택된 릴리즈를 `draft: false`, `prerelease: false`, `make_latest: true`로 업데이트합니다.
 - 특정 태그만 승격하려면 워크플로 입력값 `tag`에 태그명을 넣습니다.
 - 실제 변경 없이 대상만 확인하려면 `dry_run`을 켭니다.
