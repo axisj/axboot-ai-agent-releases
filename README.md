@@ -24,6 +24,7 @@ AXBOOT AI Agent는 데스크톱 환경에서 다음 역할을 수행합니다.
 ## 2. 이 저장소 구조
 
 - `releases/`: 버전별 배포 산출물
+- `.github/workflows/promote-latest-prerelease.yml`: 최신 공개 프리릴리즈를 latest 릴리즈로 승격하는 수동 GitHub Actions 워크플로
 - `README.md`: 소개 및 사용 설명서(현재 문서)
 
 ## 3. 사전 준비
@@ -111,7 +112,19 @@ chmod +x ./AXBOOT-AI-Agent
 - 업데이트 전 현재 작업 상태를 저장
 - 중요 프로젝트는 업데이트 전 백업 권장
 
-## 8. 문제 해결
+## 8. latest 릴리즈 승격
+
+GitHub Actions의 `Promote latest prerelease` 워크플로를 수동 실행하면 GitHub Releases에 있는 공개 프리릴리즈 중 SemVer 기준 최신 태그를 latest 릴리즈로 승격합니다.
+
+동작 방식:
+
+- draft 릴리즈는 제외합니다.
+- `vX.Y.Z` 형식의 공개 프리릴리즈만 대상으로 합니다.
+- 선택된 릴리즈를 `draft: false`, `prerelease: false`, `make_latest: true`로 업데이트합니다.
+- 특정 태그만 승격하려면 워크플로 입력값 `tag`에 태그명을 넣습니다.
+- 실제 변경 없이 대상만 확인하려면 `dry_run`을 켭니다.
+
+## 9. 문제 해결
 
 ### 실행이 차단되는 경우
 
@@ -130,13 +143,13 @@ chmod +x ./AXBOOT-AI-Agent
 - 손상된 프로젝트 폴더 여부 확인
 - 최소 샘플 프로젝트로 재현 테스트
 
-## 9. 보안 가이드
+## 10. 보안 가이드
 
 - 인증 토큰/비밀키를 저장소에 커밋하지 않습니다.
 - 공유 PC에서는 작업 후 로그아웃합니다.
 - 배포 파일은 공식 릴리스 경로에서만 다운로드합니다.
 
-## 10. 문의 및 지원
+## 11. 문의 및 지원
 
 문제 재현이 가능한 정보와 함께 문의해 주세요.
 
