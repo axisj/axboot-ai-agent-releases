@@ -1,6 +1,13 @@
 name: Promote latest prerelease
 
 on:
+  schedule:
+    - cron: "0 5 * * *"
+      timezone: "Asia/Seoul"
+    - cron: "30 12 * * *"
+      timezone: "Asia/Seoul"
+    - cron: "0 19 * * *"
+      timezone: "Asia/Seoul"
   workflow_dispatch:
     inputs:
       tag:
